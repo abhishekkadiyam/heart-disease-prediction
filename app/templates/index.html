@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Heart Disease Prediction</title>
+    <meta charset="utf-8"/>
+    <style>
+      body { font-family: Arial, sans-serif; max-width:700px; margin:2rem auto; }
+      label { display:block; margin-top:0.5rem; }
+      input { width:100%; padding:0.4rem; margin-top:0.2rem; }
+      .btn { margin-top:1rem; padding:0.6rem 1rem; }
+      .result { margin-top:1rem; padding:0.8rem; background:#f2f2f2; border-radius:6px; }
+    </style>
+  </head>
+  <body>
+    <h2>Heart Disease Prediction</h2>
+    <form action="/predict" method="post">
+      <label>age<input name="age" type="number" step="1" required></label>
+      <label>sex (1=male,0=female)<input name="sex" type="number" step="1" required></label>
+      <label>cp (chest pain type)<input name="cp" type="number" step="1" required></label>
+      <label>trestbps (resting bp)<input name="trestbps" type="number" step="any" required></label>
+      <label>chol (serum chol)<input name="chol" type="number" step="any" required></label>
+      <label>fbs (fasting bs > 120 mg/dl)<input name="fbs" type="number" step="1" required></label>
+      <label>restecg<input name="restecg" type="number" step="1" required></label>
+      <label>thalach (max heart rate)<input name="thalach" type="number" step="any" required></label>
+      <label>exang (exercise-induced angina 1=yes)<input name="exang" type="number" step="1" required></label>
+      <label>oldpeak<input name="oldpeak" type="number" step="any" required></label>
+      <label>slope<input name="slope" type="number" step="1" required></label>
+      <label>ca (num major vessels)<input name="ca" type="number" step="1" required></label>
+      <label>thal<input name="thal" type="number" step="1" required></label>
+      <button class="btn" type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+      <div class="result"><strong>Result:</strong> {{ result }}</div>
+    {% endif %}
+  </body>
+</html>
