@@ -45,6 +45,4 @@ python app/app.py
 # open http://127.0.0.1:5000 in your browser
 ```
 
-## Notes
-- The `data/` folder is intentionally left blank for you to add the dataset.
-- Do not commit large model files to Git; use releases or external storage instead.
+
